@@ -1,0 +1,29 @@
+{% extends "base_private.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="card card-modern p-4">
+    <h4 class="mb-4">Profile</h4>
+
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Experience (Years)</label>
+        <input type="number" class="form-control" id="experience_years">
+    </div>
+
+    <button class="btn btn-primary" onclick="updateProfile()">Update</button>
+</div>
+
+<script src="{% static 'frontend/js/profile.js' %}"></script>
+
+{% endblock %}

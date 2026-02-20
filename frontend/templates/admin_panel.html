@@ -1,0 +1,27 @@
+{% extends "base_private.html" %}
+{% load static %}
+{% block content %}
+
+<h2 class="mb-4 fw-semibold">Admin Control Panel</h2>
+
+<div class="card card-modern p-4">
+    <h5>All Users</h5>
+
+    <table class="table table-hover mt-3">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Experience</th>
+                <th>GitHub</th>
+                <th>DevScore</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="adminUsersTable"></tbody>
+    </table>
+</div>
+
+<script src="{% static 'frontend/js/admin.js' %}"></script>
+
+{% endblock %}

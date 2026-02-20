@@ -1,0 +1,21 @@
+{% extends "base_private.html" %}
+{% load static %}
+{% block content %}
+<div class="card card-modern p-4">
+    <h4 class="fw-semibold mb-3">Top Developers</h4>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Dev Score</th>
+                <th>Experience (Years)</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboardBody"></tbody>
+    </table>
+</div>
+<script src="{% static 'frontend/js/leaderboard.js' %}"></script>
+
+{% endblock %}

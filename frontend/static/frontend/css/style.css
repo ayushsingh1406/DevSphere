@@ -1,0 +1,312 @@
+/* =========================
+   Global Base
+========================= */
+
+body {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0f172a;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e293b !important;
+    letter-spacing: 0.3px;
+}
+
+.nav-link {
+    color: #475569 !important;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #4f46e5 !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #4f46e5;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.card-modern {
+    border: none;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    transition: all 0.25s ease;
+    overflow: hidden;
+}
+
+.card-modern:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.10);
+}
+
+/* =========================
+   Stats Typography
+========================= */
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #64748b;
+    letter-spacing: 0.8px;
+}
+
+/* =========================
+   Tables
+========================= */
+
+.table {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #f1f5f9;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-hover tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #eef2ff;
+}
+
+/* =========================
+   Forms
+========================= */
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: none;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border: none;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* =========================
+   Chart Canvas Polish
+========================= */
+
+canvas {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+/* =========================
+   Progress Bar
+========================= */
+
+.progress {
+    height: 8px;
+    border-radius: 50px;
+    background: #e2e8f0;
+}
+
+.progress-bar {
+    border-radius: 50px;
+    background: linear-gradient(90deg, #6366f1, #4f46e5);
+}
+
+/* =========================
+   Subtle Page Animations
+========================= */
+
+.card-modern,
+.table,
+canvas {
+    animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Premium Floating Glow
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -250px;
+    right: -250px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99,102,241,0.35) 0%, transparent 70%);
+    z-index: -1;
+    animation: floatOne 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -250px;
+    left: -250px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(34,197,94,0.35) 0%, transparent 70%);
+    z-index: -1;
+    animation: floatTwo 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatOne {
+    from { transform: translateY(0px); }
+    to { transform: translateY(40px); }
+}
+
+@keyframes floatTwo {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-40px); }
+}
+
+/* =========================
+   Glass Card Enhancement
+========================= */
+
+.card-modern {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+}
+
+.card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+}
+
+
+/* =========================
+   Stat Hover Glow
+========================= */
+
+.card-modern:hover .stat-number {
+    color: #4f46e5;
+    transition: color 0.3s ease;
+}
+
+.table-hover tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(99,102,241,0.08),
+        rgba(99,102,241,0.02)
+    );
+    transform: scale(1.01);
+}
+
+/* =========================
+   Project Status Styling
+========================= */
+
+.status-select {
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 6px 12px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.status-select.planned {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-select.in_progress {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-select.completed {
+    background-color: #dcfce7;
+    color: #166534;
+}

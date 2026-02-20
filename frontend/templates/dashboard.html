@@ -1,0 +1,151 @@
+{% extends "base_private.html" %}
+{% load static %}
+{% block content %}
+
+<div class="mb-5">
+    <h2 class="fw-bold">Developer Intelligence</h2>
+    <p class="text-muted mb-0">Track growth. Build mastery. Level up.</p>
+</div>
+<div class="card card-modern p-4 mb-4">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-1">Developer Level</h5>
+            <h3 id="dev_level"></h3>
+        </div>
+        <div class="text-end">
+            <small class="text-muted">Progress to next level</small>
+        </div>
+    </div>
+
+    <div class="progress mt-3" style="height: 10px;">
+        <div class="progress-bar bg-success" id="level_progress_bar" role="progressbar" style="width: 0%;">
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================== -->
+<!-- KPI SECTION -->
+<!-- ===================== -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-3">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Dev Score</div>
+            <div class="stat-number" id="dev_score"></div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Total Practice Hours</div>
+            <div class="stat-number" id="total_hours"></div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Total Skills</div>
+            <div class="stat-number" id="total_skills"></div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Completed Projects</div>
+            <div class="stat-number" id="completed_projects"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row g-4 mb-5">
+
+    <div class="col-md-4">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Average Project Difficulty</div>
+            <div class="stat-number" id="avg_difficulty"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Strongest Skill</div>
+            <div class="stat-number" id="strongest_skill"></div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card card-modern p-4">
+            <div class="stat-label">Weakest Skill</div>
+            <div class="stat-number" id="weakest_skill"></div>
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<!-- ===================== -->
+<!-- PRACTICE SECTION -->
+<!-- ===================== -->
+
+<h4>Add Practice Session</h4>
+
+<form id="practiceForm" class="row g-3">
+    <div class="col-md-4">
+        <select class="form-select" id="skillSelect" required>
+            <option value="">Select Skill</option>
+        </select>
+    </div>
+
+    <div class="col-md-4">
+        <input type="number" step="0.1" class="form-control" id="hours" placeholder="Hours" required>
+    </div>
+
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-success w-100">Add Practice</button>
+    </div>
+</form>
+
+<hr class="my-4">
+
+<!-- ===================== -->
+<!-- SKILLS TABLE -->
+<!-- ===================== -->
+
+<h4>Your Skills</h4>
+
+<table class="table table-hover bg-white card-modern">
+    <thead>
+        <tr>
+            <th>Skill</th>
+            <th>Proficiency</th>
+            <th>Practice Hours</th>
+        </tr>
+    </thead>
+    <tbody id="skillsTable"></tbody>
+</table>
+
+<hr class="my-4">
+
+<!-- ===================== -->
+<!-- CHART -->
+<!-- ===================== -->
+
+<h4>Skill Practice Distribution</h4>
+<canvas id="skillChart" height="100"></canvas>
+
+<hr class="my-5">
+
+<div class="text-center">
+    <button class="btn btn-danger" onclick="deleteAccount()">
+        Delete My Account
+    </button>
+</div>
+
+<script src="{% static 'frontend/js/dashboard.js' %}"></script>
+
+{% endblock %}
